@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Zpain-auth
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 123456
+    url: jdbc:mysql://localhost:3306/zpain_test?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+mybatis:
+  # xml位置
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  #model包
+  type-aliases-package: com.zpain.dbtest.entity
+  # mybatis配置
+  config-location: classpath:mybatis/mybatis-config.xml
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

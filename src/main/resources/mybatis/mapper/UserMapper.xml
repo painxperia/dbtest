@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zpain.dbtest.service.UserService">
+
+    <sql id="params">
+        id,username,password,email
+    </sql>
+
+    <select id="getAllUser" resultType="com.zpain.dbtest.entity.User">
+        select <include refid="params"/> from user
+    </select>
+
+    <select id="getUser" resultType="com.zpain.dbtest.entity.User">
+        select <include refid="params"/> from user
+    </select>
+
+</mapper>
