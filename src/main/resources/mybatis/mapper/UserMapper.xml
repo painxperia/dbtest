@@ -14,4 +14,19 @@
         select <include refid="params"/> from user
     </select>
 
+    <select id="getUserCursor" resultType="com.zpain.dbtest.entity.User">
+        select <include refid="params"/> from user limit #{limit}
+    </select>
+
+    <insert id="saveUser" parameterType="java.util.List">
+        insert into user <include refid="params"/> values
+        <foreach collection="list" item="item" separator="," close=";">
+            (
+             #{item.id},
+            #{item.username},
+            #{item.password},
+            #{item.email}
+            )
+        </foreach>
+    </insert>
 </mapper>
